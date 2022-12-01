@@ -122,7 +122,13 @@ export default function Classes() {
       )}
 
       {/* join class form  */}
-      {canJoinClass && <JoinClassForm handleCanJoinClass={handleCanJoinClass} />}
+      {canJoinClass && (
+        <JoinClassForm
+          fetchClasses={fetchClasses}
+          setCanJoinClass={setCanJoinClass}
+          handleCanJoinClass={handleCanJoinClass}
+        />
+      )}
 
       {/* render class cards or message if none */}
       <div

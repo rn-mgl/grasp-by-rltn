@@ -39,7 +39,7 @@ export default function JoinClassForm(props) {
       setClassCode("");
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error?.response?.data?.msg });
     }
     setLoading(false);
   };
