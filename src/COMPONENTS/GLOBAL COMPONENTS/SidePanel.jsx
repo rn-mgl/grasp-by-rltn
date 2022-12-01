@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { BiLogOut } from "react-icons/bi";
 import { useGlobalContext } from "../../context";
