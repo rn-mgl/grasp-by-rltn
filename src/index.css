@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .custom-flex {
+    @apply flex justify-center items-center;
+  }
+
+  .custom-border {
+    @apply rounded-lg border-2 border-pr-blk w-3/12;
+  }
+
+  .custom-light-border {
+    @apply w-full border-[1px] border-gray-300 p-5 rounded-lg;
+  }
+
+  .custom-navbar {
+    @apply custom-flex w-full font-Poppins font-medium;
+  }
+
+  .custom-inner-nav {
+    @apply flex gap-28 mx-auto;
+  }
+
+  .custom-postbody {
+    @apply bg-gray-100 flex flex-col content-center rounded-lg p-6 gap-8;
+  }
+
+  .custom-panel-bars {
+    @apply font-Poppins font-medium flex gap-4 items-center ml-14
+    hover:bg-pr-wht py-3 px-5 rounded-lg;
+  }
+
+  .custom-divider {
+    @apply w-full h-px bg-pr-gry;
+  }
+}
+
+@layer components {
+  .custom-btn {
+    @apply px-8 py-3 font-Poppins font-semibold text-lg rounded-lg cursor-pointer;
+  }
+  .custom-input {
+    @apply custom-light-border px-5 py-2 font-Work w-96;
+  }
+  .custom-radio {
+    @apply custom-light-border cursor-pointer w-24 py-2.5;
+  }
+}
+
+@layer utilities {
+  .custom-hover {
+    @apply hover:scale-105 hover:drop-shadow-custom-shadow duration-100 ease-in-out;
+  }
+}
+
+body {
+  background: white;
+}
+.child {
+  visibility: hidden;
+}
+
+.parent:hover .child {
+  visibility: visible;
+}
+
+.custom-text-shadow {
+  text-shadow: 0rem 0.3rem 0.2rem rgba(0, 0, 0, 0.27);
+}
