@@ -102,13 +102,15 @@ export default function ClassPost(props) {
                 post.post_type === "post" ? "bg-pr-wht" : "bg-pr-grn text-pr-wht"
               } ${loading && "blur-sm transition-all"} w-full`}
             >
-              {postToEdit === post.post_id && (
-                <EditClassPost
-                  post_id={post.post_id}
-                  handlePostToEdit={() => handlePostToEdit(-1)}
-                  fetchPage={fetchPosts}
-                />
-              )}
+              {postPath === "class"
+                ? props.classData?.class_is_ongoing === 1 && postToEdit === post.post_id
+                : postToEdit === post.post_id && (
+                    <EditClassPost
+                      post_id={post.post_id}
+                      handlePostToEdit={() => handlePostToEdit(-1)}
+                      fetchPage={fetchPosts}
+                    />
+                  )}
 
               {post.post_type === "task" && <TaskPostPreview post={post} />}
 
