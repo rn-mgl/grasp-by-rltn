@@ -52,7 +52,7 @@ export default function Signup() {
 
       if (data.token) {
         localStorage.setItem("token", `Bearer ${data.token}`);
-        localStorage.setItem("curr", `Bearer ${data.user._id}`);
+        localStorage.setItem("curr", `${data.user._id}`);
 
         navigate("/home");
       }

@@ -32,7 +32,7 @@ export default function JoinClassForm(props) {
         { class_code: classCode },
         { headers: { Authorization: token } }
       );
-      if (data.joined_status.affectedRows > 0) {
+      if (data?.joined_status?.affectedRows > 0) {
         props.fetchClasses();
       }
       props.setCanJoinClass(false);

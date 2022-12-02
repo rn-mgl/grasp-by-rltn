@@ -79,6 +79,7 @@ export default function EditTaskForm() {
     const { task_main_topic, task_text, task_submission_date, task_points, task_file } = taskData;
     const { fileName } = selectedFile;
     let taskFile = "";
+
     try {
       if (task_file && !task_file.startsWith("https")) {
         taskFile = await file_fns.fileUpload(e.target.taskFile.files[0], axios, url, token);

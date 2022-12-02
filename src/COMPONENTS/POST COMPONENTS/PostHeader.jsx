@@ -5,7 +5,6 @@ import { Buffer } from "buffer";
 
 export default function PostHeader(props) {
   const user = parseInt(localStorage.getItem("curr"));
-
   return (
     <div className="flex items-center">
       <div className="mr-auto custom-flex gap-3">

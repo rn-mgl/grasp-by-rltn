@@ -54,24 +54,7 @@ export default function ClassPost(props) {
       const { data } = await axios.delete(`${url}/${postPath}/${post_id}`, {
         headers: { Authorization: token },
       });
-      const { file_name } = data;
-      if (file_name) {
-        const resource_type =
-          file_name.endsWith(".jpg") || file_name.endsWith(".png")
-            ? "image"
-            : file_name.endsWith(".mp4") || file_name.endsWith(".mov")
-            ? "video"
-            : "raw";
-        try {
-          await axios.delete(`${url}/grasp-by-rltn/file-upload`, {
-            headers: { Authorization: token },
-            data: { public_id: file_name, resource_type },
-          });
-        } catch (error) {
-          console.log(error);
-          props.setError({ active: true, message: error.response.data.msg });
-        }
-      }
+
       if (data) {
         fetchPosts();
       }
@@ -119,7 +102,7 @@ export default function ClassPost(props) {
                 post.post_type === "post" ? "bg-pr-wht" : "bg-pr-grn text-pr-wht"
               } ${loading && "blur-sm transition-all"} w-full`}
             >
-              {props.classData?.class_is_ongoing === 1 && postToEdit === post.post_id && (
+              {postToEdit === post.post_id && (
                 <EditClassPost
                   post_id={post.post_id}
                   handlePostToEdit={() => handlePostToEdit(-1)}
