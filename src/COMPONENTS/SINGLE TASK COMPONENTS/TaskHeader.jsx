@@ -1,4 +1,5 @@
 import React from "react";
+import { convertTime } from "../../FUNCTIONS/dateFunction";
 
 export default function TaskHeader(props) {
   return (
@@ -12,7 +13,7 @@ export default function TaskHeader(props) {
           {props.topic}
         </div>
         <div className="font-light">
-          {props.submission_date ? props.submission_date : "No Deadline"}
+          {props.submission_date ? convertTime(props.submission_date) : "No Deadline"}
         </div>
       </div>
 

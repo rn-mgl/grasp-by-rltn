@@ -2,6 +2,7 @@ import React from "react";
 import HeaderMoreInfo from "../../COMPONENTS/GLOBAL COMPONENTS/HeaderMoreInfo";
 import { AiOutlineMore } from "react-icons/ai";
 import { Buffer } from "buffer";
+import { convertTime } from "../../FUNCTIONS/dateFunction";
 
 export default function PostHeader(props) {
   const user = parseInt(localStorage.getItem("curr"));
@@ -24,7 +25,7 @@ export default function PostHeader(props) {
               ? "You"
               : `${props.post.user_name} ${props.post.user_surname}`
           } `}</div>
-          <div className="font-Work font-light">{props.post.post_created}</div>
+          <div className="font-Work font-light">{convertTime(props.post.post_created)}</div>
         </div>
       </div>
       <div>

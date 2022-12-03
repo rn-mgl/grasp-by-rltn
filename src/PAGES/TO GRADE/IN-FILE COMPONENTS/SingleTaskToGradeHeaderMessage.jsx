@@ -1,4 +1,5 @@
 import React from "react";
+import { convertTime } from "../../../FUNCTIONS/dateFunction";
 
 export default function SingleTaskToGradeHeaderMessage(props) {
   return (
@@ -18,7 +19,7 @@ export default function SingleTaskToGradeHeaderMessage(props) {
                         tablet:text-left"
           >
             <div className="font-normal">Date Submitted</div>
-            <div>{props.task?.student_submission_date}</div>
+            <div>{convertTime(props.task?.student_submission_date)}</div>
           </div>
         ) : (
           <div className="font-normal">Student is still doing the task</div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Buffer } from "buffer";
+import { convertTime } from "../../FUNCTIONS/dateFunction";
 
 export default function PeopleHeader(props) {
   return (
@@ -25,7 +26,7 @@ export default function PeopleHeader(props) {
             {props.peopleData?.student_joined && (
               <div>
                 <div>Joined the class on</div>
-                <div>{props.peopleData?.student_joined}</div>
+                <div>{convertTime(props.peopleData?.student_joined)}</div>
               </div>
             )}
           </div>

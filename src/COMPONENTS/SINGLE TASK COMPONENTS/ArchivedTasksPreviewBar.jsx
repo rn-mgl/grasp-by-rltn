@@ -1,5 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { convertTime } from "../../FUNCTIONS/dateFunction";
+
 export default function ArchivedTasksPreviewBar(props) {
   return (
     <div className="flex flex-col w-full gap-5">
@@ -14,7 +16,11 @@ export default function ArchivedTasksPreviewBar(props) {
             <div className="flex justify-center font-Poppins ">
               <div className="mr-auto font-semibold break-all">{task.task_main_topic}</div>
               <div>
-                {task.task_submission_date ? task.task_submission_date : <div>No Deadline</div>}
+                {task.task_submission_date ? (
+                  convertTime(task.task_submission_date)
+                ) : (
+                  <div>No Deadline</div>
+                )}
               </div>
             </div>
             <div className="font-Work flex">

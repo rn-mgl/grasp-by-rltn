@@ -1,4 +1,5 @@
 import React from "react";
+import { convertTime } from "../../../FUNCTIONS/dateFunction";
 
 export default function CommentBarHeader(props) {
   const user = parseInt(localStorage.getItem("curr"));
@@ -24,7 +25,7 @@ export default function CommentBarHeader(props) {
           className="font-Work font-light text-xs
                 "
         >
-          {props.commentData?.comment_created}
+          {convertTime(props.commentData?.comment_created)}
         </div>
       </div>
     </div>
