@@ -33,7 +33,7 @@ export default function EditComment(props) {
       : props.type === "public_comment"
       ? `${baseUrl}/public/${props.comment_id}`
       : `${baseUrl}/private/${props.comment_id}`;
-  console.log(props.type);
+
   // get comment data function
   const fetchComment = React.useCallback(async () => {
     setLoading(true);
