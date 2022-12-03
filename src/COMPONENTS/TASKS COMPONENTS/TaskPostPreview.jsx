@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { BsPin } from "react-icons/bs";
+import { convertTime } from "../../FUNCTIONS/dateFunction";
 
 export default function TaskPostPreview(props) {
   const taskPostText = `${props.post.user_name} ${props.post.user_surname} | ${props.post.post_main_topic}`;
@@ -24,7 +25,7 @@ export default function TaskPostPreview(props) {
               {taskPostText}
             </div>
           </div>
-          <div className="font-Work font-light">{props.post.post_created}</div>
+          <div className="font-Work font-light">{convertTime(props.post.post_created)}</div>
         </div>
       </div>
     </NavLink>
