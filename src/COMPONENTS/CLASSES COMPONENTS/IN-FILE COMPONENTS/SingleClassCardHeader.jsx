@@ -19,7 +19,7 @@ export default function SingleClassCardHeader(props) {
 
         {/* class handler */}
         <div
-          className="font-Work font-light text-pr-wht
+          className="font-Work font-light text-pr-wht text-sm
     laptop-l:text-base
     4k:text-3xl"
         >

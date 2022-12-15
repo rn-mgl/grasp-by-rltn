@@ -6,12 +6,37 @@ import { AiOutlineMore } from "react-icons/ai";
 import ClassCardInfo from "./ClassCardInfo";
 import EditClassForm from "./EditClassForm";
 import SingleClassCardHeader from "./IN-FILE COMPONENTS/SingleClassCardHeader";
+import axios from "axios";
+
+// global function components
+import { NavLink } from "react-router-dom";
+import { useGlobalContext } from "../../context";
 
 export default function SingleClassCard(props) {
+  const [activityPreview, setActivityPreview] = React.useState([]);
+  const { url } = useGlobalContext();
   const color = props.isArchived ? "bg-pr-blu" : "bg-pr-grn";
+  const token = localStorage.getItem("token");
   const handlerImage = props.data?.user_image
     ? Buffer.from(props.data.user_image).toString()
     : undefined;
+
+  const fetchTasksPreview = React.useCallback(async () => {
+    try {
+      const { data } = await axios.get(`${url}/classes/${props.data.class_id}`, {
+        headers: { Authorization: token },
+      });
+      if (data) {
+        setActivityPreview(data.upcoming_tasks_data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }, [props.data.class_id, token, url]);
+
+  React.useEffect(() => {
+    fetchTasksPreview();
+  }, [fetchTasksPreview]);
 
   return (
     <>
@@ -64,13 +89,31 @@ export default function SingleClassCard(props) {
 
         {/* white box */}
         <div
-          className="p-4 h-32
+          className="p-4 h-32 flex flex-col gap-0
             mobile-s:hidden
             tablet:flex
             laptop-s:h-40
             laptop-l:h-52
             4k:h-72"
-        ></div>
+        >
+          {activityPreview.map((act) => {
+            return (
+              <div
+                className="mobile-s:hidden text-sm
+                      tablet:flex
+                      laptop-s:text-base"
+                key={act.task_id}
+              >
+                <NavLink
+                  className="font-Work hover:text-pr-grn"
+                  to={`/class/${props.data.class_id}/tasks/${act.task_id}`}
+                >
+                  {act.task_main_topic}
+                </NavLink>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </>
   );
