@@ -19,6 +19,7 @@ export const fileUpload = async (file, axios, url, token) => {
   } else {
     const formData = new FormData();
     formData.append("file", fileData);
+
     try {
       const {
         data: {

@@ -34,6 +34,7 @@ export default function WritePost(props) {
     const { fileName } = selectedFile;
     const { post_main_topic, post_text, post_file } = postData;
     let postFile = "";
+
     setLoading(true);
     if (post_main_topic !== "" && post_main_topic.trim() !== "") {
       try {
