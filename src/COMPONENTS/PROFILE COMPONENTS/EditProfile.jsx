@@ -68,7 +68,7 @@ export default function EditProfile(props) {
     e.preventDefault();
     setLoading(true);
     try {
-      if (user_image && !user_image.startsWith("https")) {
+      if (user_image && !user_image?.startsWith("https")) {
         userImage = await file_fns.fileUpload(e.target.userImage.files[0], axios, url, token);
       }
 
@@ -83,7 +83,7 @@ export default function EditProfile(props) {
             user_image:
               userImage !== "" && !user_image.startsWith("https")
                 ? userImage
-                : user_image.startsWith("https")
+                : user_image?.startsWith("https")
                 ? user_image
                 : null,
           },
