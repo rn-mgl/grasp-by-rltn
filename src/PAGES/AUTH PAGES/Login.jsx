@@ -51,14 +51,7 @@ export default function Login() {
       }
     } catch (error) {
       console.log(error);
-      setError({
-        active: true,
-        message: (
-          <div>
-            Incorrect Email or Password.<br></br> Please Try Again.
-          </div>
-        ),
-      });
+      setError({ active: true, message: error });
     }
 
     setLoading(false);
