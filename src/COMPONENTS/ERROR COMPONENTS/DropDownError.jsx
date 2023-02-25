@@ -24,8 +24,8 @@ export default function DropDownError({ error, setError }) {
         <div>
           {error.message.response?.data?.msg
             ? error.message.response?.data?.msg
-            : error.message
-            ? error.message
+            : error.message.message
+            ? error.message.message
             : "Server Error. Please try again later."}
         </div>
         <div>
