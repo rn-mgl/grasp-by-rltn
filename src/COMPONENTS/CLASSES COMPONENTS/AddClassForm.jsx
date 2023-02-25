@@ -69,7 +69,7 @@ export default function AddClassForm(props) {
         }
       } catch (error) {
         console.log(error);
-        setError({ active: true, message: error.response.data.msg });
+        setError({ active: true, message: error });
       }
     } else {
       setError({

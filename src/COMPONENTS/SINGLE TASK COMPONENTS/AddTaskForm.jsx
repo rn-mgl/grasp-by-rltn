@@ -96,7 +96,7 @@ export default function AddTaskForm() {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
     setLoading(false);
   };

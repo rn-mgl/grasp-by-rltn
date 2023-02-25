@@ -47,7 +47,7 @@ export default function SingleClass() {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
     setLoading(false);
   }, [class_id, token, url]);

@@ -46,7 +46,7 @@ export default function SingleTaskToGrade(props) {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
   }, [props.task_id, token, props.class_id, props.studentSelected, url]);
 
@@ -82,7 +82,7 @@ export default function SingleTaskToGrade(props) {
         }
       } catch (error) {
         console.log(error);
-        setError({ active: true, message: error.response.data.msg });
+        setError({ active: true, message: error });
       }
     } else {
       setError({
@@ -110,7 +110,7 @@ export default function SingleTaskToGrade(props) {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
   };
 

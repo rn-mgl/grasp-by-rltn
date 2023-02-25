@@ -21,7 +21,13 @@ export default function DropDownError({ error, setError }) {
                   mobile-l:w-80
                   `}
       >
-        <div>{error?.message ? error?.message : "Server Error. Please Try Again"}</div>
+        <div>
+          {error.message.response?.data?.msg
+            ? error.message.response?.data?.msg
+            : error.message
+            ? error.message
+            : "Server Error. Please try again later."}
+        </div>
         <div>
           <IoMdCloseCircleOutline className="scale-125 cursor-pointer" onClick={handleCloseError} />
         </div>

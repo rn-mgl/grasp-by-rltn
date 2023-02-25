@@ -69,7 +69,7 @@ export default function EditTaskForm() {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
   }, [url, class_id, task_id, token]);
 

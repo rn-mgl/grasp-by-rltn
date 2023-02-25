@@ -46,7 +46,7 @@ export default function SingleTask() {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
     setLoading(false);
   }, [task_id, token, class_id, url]);
@@ -64,7 +64,7 @@ export default function SingleTask() {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
   };
 

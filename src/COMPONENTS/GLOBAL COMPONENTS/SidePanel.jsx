@@ -30,7 +30,7 @@ export default function SidePanel() {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
   }, [token, url]);
 

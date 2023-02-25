@@ -55,7 +55,7 @@ export default function EditClassForm(props) {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
   }, [props.classId, token, url]);
 
@@ -98,7 +98,7 @@ export default function EditClassForm(props) {
         }
       } catch (error) {
         console.log(error);
-        setError({ active: true, message: error.response.data.msg });
+        setError({ active: true, message: error });
       }
     } else {
       setError({

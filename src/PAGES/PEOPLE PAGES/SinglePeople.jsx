@@ -38,7 +38,7 @@ export default function SinglePeople() {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
   }, [class_id, people_id, token, url]);
 
@@ -53,7 +53,7 @@ export default function SinglePeople() {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
   }, [class_id, people_id, token, url]);
 
@@ -68,7 +68,7 @@ export default function SinglePeople() {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
   }, [class_id, people_id, token, url]);
 
@@ -82,7 +82,7 @@ export default function SinglePeople() {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
   }, [class_id, people_id, token, url]);
 

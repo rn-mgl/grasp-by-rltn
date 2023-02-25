@@ -46,7 +46,7 @@ export default function EditComment(props) {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
     setLoading(false);
   }, [token, path_direction]);
@@ -68,7 +68,7 @@ export default function EditComment(props) {
       props.handleCommentToEdit(-1);
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
     setLoading(false);
   };

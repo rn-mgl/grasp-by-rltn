@@ -32,7 +32,7 @@ export default function ArchivedClasses() {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
   }, [token, url]);
 
@@ -50,7 +50,7 @@ export default function ArchivedClasses() {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
   };
 
@@ -72,7 +72,7 @@ export default function ArchivedClasses() {
           });
         } catch (error) {
           console.log(error);
-          setError({ active: true, message: error.response.data.msg });
+          setError({ active: true, message: error });
         }
       }
       if (data) {
@@ -80,7 +80,7 @@ export default function ArchivedClasses() {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
   };
 

@@ -42,7 +42,7 @@ export default function Classes() {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
     setLoading(false);
   }, [token, url]);
@@ -58,7 +58,7 @@ export default function Classes() {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
   };
 
@@ -75,7 +75,7 @@ export default function Classes() {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
   };
 

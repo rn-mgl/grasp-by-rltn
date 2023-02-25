@@ -46,7 +46,7 @@ export default function Comments(props) {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
   }, [token, baseUrl, commentPath, props.type, commentEnd]);
 
@@ -63,7 +63,7 @@ export default function Comments(props) {
       setCommentData((prev) => {
         return { ...prev, [props.name]: "", postId: -1 };
       });
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
   };
 
@@ -88,7 +88,7 @@ export default function Comments(props) {
         });
       } catch (error) {
         console.log(error);
-        setError({ active: true, message: error.response.data.msg });
+        setError({ active: true, message: error });
       }
     } else {
       setError({ active: true, message: "Enter content before sending comment." });

@@ -8,6 +8,6 @@ export const fetchPosts = async (axios, url, class_id, token, setPosts, setError
     }
   } catch (error) {
     console.log(error);
-    setError({ active: true, message: error.response.data.msg });
+    setError({ active: true, message: error });
   }
 };

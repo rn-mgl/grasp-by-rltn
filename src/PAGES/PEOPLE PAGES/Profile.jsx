@@ -37,7 +37,7 @@ export default function Profile() {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
   }, [token, url, user]);
 
@@ -52,7 +52,7 @@ export default function Profile() {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
   }, [token, url, user]);
 
@@ -67,7 +67,7 @@ export default function Profile() {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
   }, [token, url, user]);
 
@@ -82,7 +82,7 @@ export default function Profile() {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
   }, [token, url, user]);
 

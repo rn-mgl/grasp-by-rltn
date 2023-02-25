@@ -46,7 +46,7 @@ export default function ArchivedSingleTask() {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
   }, [task_id, token, baseUrl]);
 
@@ -64,7 +64,7 @@ export default function ArchivedSingleTask() {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
   };
 
@@ -89,7 +89,7 @@ export default function ArchivedSingleTask() {
             data: { public_id: file_name, resource_type },
           });
         } catch (error) {
-          setError({ active: true, message: error.response.data.msg });
+          setError({ active: true, message: error });
         }
       }
       if (data) {
@@ -97,7 +97,7 @@ export default function ArchivedSingleTask() {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
     setLoading(false);
   };

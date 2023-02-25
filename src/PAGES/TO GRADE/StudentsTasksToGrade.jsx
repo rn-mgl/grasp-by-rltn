@@ -37,7 +37,7 @@ export default function TaskToGrade() {
       }
     } catch (error) {
       console.log(error);
-      setError({ active: true, message: error.response.data.msg });
+      setError({ active: true, message: error });
     }
   }, [class_id, task_id, token, url]);
 
