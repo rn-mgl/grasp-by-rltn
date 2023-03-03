@@ -6,6 +6,7 @@ export default function ProfileClasses({ classData }) {
     <NavLink
       to={`/class/${classData.class_id}`}
       className="w-full py-3 px-5 rounded-none border-x-0 custom-light-border
+      
                 hover:bg-gradient-to-r hover:from-pr-red hover:to-pr-orng hover:text-white  
                 tablet:w-44 tablet:border-x-[1px] tablet:rounded-lg tablet:custom-flex tablet:flex-col
                 laptop-s:w-64 h-32"

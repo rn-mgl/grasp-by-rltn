@@ -108,24 +108,26 @@ export default function Profile() {
   }, [fetchUserTaskCount]);
 
   return (
-    <div className="custom-flex flex-col gap-10  bg-gradient-to-b from-white to-pr-gry">
-      <DropDownError error={error} setError={setError} />
+    <div className="custom-flex flex-col  bg-gradient-to-b from-white to-pr-gry">
+      <div className="custom-flex flex-col tablet:w-8/12 laptop-s:w-7/12 laptop-l:w-6/12 gap-10">
+        <DropDownError error={error} setError={setError} />
 
-      {canEditProfile && (
-        <EditProfile
-          fetchUserData={fetchUserData}
-          userData={userData}
-          handleCanEditProfile={handleCanEditProfile}
-        />
-      )}
+        {canEditProfile && (
+          <EditProfile
+            fetchUserData={fetchUserData}
+            userData={userData}
+            handleCanEditProfile={handleCanEditProfile}
+          />
+        )}
 
-      <ProfileHeader handleCanEditProfile={handleCanEditProfile} userData={userData} />
+        <ProfileHeader handleCanEditProfile={handleCanEditProfile} userData={userData} />
 
-      <ProfileCompiledCountCard classesData={classesData} countsData={countsData} />
+        <ProfileCompiledCountCard classesData={classesData} countsData={countsData} />
 
-      <ProfileCompiledClasses classesData={classesData} fetchUserData={fetchUserData} />
+        <ProfileCompiledClasses classesData={classesData} fetchUserData={fetchUserData} />
 
-      <ProfileCompileTasks tasksData={tasksData} fetchUserData={fetchUserData} />
+        <ProfileCompileTasks tasksData={tasksData} fetchUserData={fetchUserData} />
+      </div>
     </div>
   );
 }

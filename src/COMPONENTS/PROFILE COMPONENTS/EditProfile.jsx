@@ -220,6 +220,9 @@ export default function EditProfile(props) {
           secondaryLabel={"CHANGE IMAGE"}
         />
         <AttachmentPreview selectedFile={selectedFile} postData={userData} />
+        <p className="font-Work text-pr-grn font-light text-sm">
+          FILES SHOULD BE BELOW 10MB TO AVOID ERRORS
+        </p>
         <div
           className="custom-flex gap-3
                     tablet:flex-row"
