@@ -3,11 +3,10 @@ import React from "react";
 export default function RadioButton(props) {
   return (
     <label
-      className={`${props.className} font-Poppins w-20 custom-flex font-semibold text-sm 
-                custom-radio hover:bg-pr-gry duration-100 p-0.5
-                tablet:text-base tablet:w-36
-                laptop-l:text-lg 
-                4k:w-64 4k:text-3xl 4k:p-6`}
+      className={`${props.className} font-Poppins w-full custom-flex font-semibold text-base 
+                custom-radio hover:bg-pr-gry duration-100 p-1           
+               laptop-s:text-lg
+                4k:text-3xl 4k:p-6`}
       htmlFor={props.id}
     >
       <input

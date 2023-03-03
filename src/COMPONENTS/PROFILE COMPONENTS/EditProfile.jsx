@@ -129,12 +129,12 @@ export default function EditProfile(props) {
     >
       <DropDownError error={error} setError={setError} />
       <form
-        className="custom-flex flex-col gap-3 bg-white absolute p-10 rounded-lg shadow-md  
+        className="custom-flex flex-col gap-3 bg-white absolute p-10 rounded-lg shadow-md
             laptop-l:gap-7
             4k:gap-8"
         onSubmit={(e) => updateProfile(e)}
       >
-        <div className="custom-flex flex-col gap-3 w-full">
+        <div className="custom-flex flex-col gap-2 w-full tablet:flex-row">
           <div className="w-full">
             <div className="font-Work">Name</div>
             <InputField
@@ -162,7 +162,7 @@ export default function EditProfile(props) {
         </div>
 
         <div
-          className="flex gap-2 flex-col
+          className="flex gap-2 flex-col w-full
               4k:gap-6"
         >
           <div
@@ -172,7 +172,7 @@ export default function EditProfile(props) {
             GENDER
           </div>
 
-          <div className="flex gap-5 ">
+          <div className="flex flex-row gap-3 w-full tablet:gap-5">
             <RadioButton
               checked={userData.user_gender === "M"}
               value={"M"}
@@ -193,32 +193,35 @@ export default function EditProfile(props) {
           </div>
         </div>
 
-        {selectedFile.fileUrl && (
-          <CancelButton
-            onClick={() => {
-              file_fns.handleRemoveFile(setSelectedFile);
-              setUserData((prev) => {
-                return {
-                  ...prev,
-                  user_image: "",
-                };
-              });
-            }}
-            label={"REMOVE FILE"}
-          />
-        )}
+        <div className="flex flex-col gap-3 w-full tablet:flex-row tablet:gap-5">
+          {selectedFile.fileUrl && (
+            <CancelButton
+              onClick={() => {
+                file_fns.handleRemoveFile(setSelectedFile);
+                setUserData((prev) => {
+                  return {
+                    ...prev,
+                    user_image: "",
+                  };
+                });
+              }}
+              label={"REMOVE FILE"}
+            />
+          )}
 
-        <AttachmentInput
-          name={"user_image"}
-          htmlFor={"userImage"}
-          id={"userImage"}
-          onChange1={handleEditData}
-          onChange2={(e) => file_fns.handleFileSelection(e, setSelectedFile)}
-          value={userData.user_image}
-          selectedFile={selectedFile}
-          primaryLabel={"UPLOAD IMAGE"}
-          secondaryLabel={"CHANGE IMAGE"}
-        />
+          <AttachmentInput
+            name={"user_image"}
+            htmlFor={"userImage"}
+            id={"userImage"}
+            onChange1={handleEditData}
+            onChange2={(e) => file_fns.handleFileSelection(e, setSelectedFile)}
+            value={userData.user_image}
+            selectedFile={selectedFile}
+            primaryLabel={"UPLOAD IMAGE"}
+            secondaryLabel={"CHANGE IMAGE"}
+          />
+        </div>
+
         <AttachmentPreview selectedFile={selectedFile} postData={userData} />
         <p className="font-Work text-pr-grn font-light text-sm">
           FILES SHOULD BE BELOW 10MB TO AVOID ERRORS
