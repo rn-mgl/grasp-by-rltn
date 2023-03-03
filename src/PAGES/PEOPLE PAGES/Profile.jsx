@@ -109,7 +109,7 @@ export default function Profile() {
 
   return (
     <div className="custom-flex flex-col  bg-gradient-to-b from-white to-pr-gry">
-      <div className="custom-flex flex-col tablet:w-8/12 laptop-s:w-7/12 laptop-l:w-6/12 gap-10">
+      <div className="custom-flex flex-col tablet:w-10/12 laptop-s:w-7/12 laptop-l:w-8/12 gap-10">
         <DropDownError error={error} setError={setError} />
 
         {canEditProfile && (
